@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Counter-App</title>
+</head>
+<body>
+
+	<div id="app">
+		<div style="margin: 20%; padding: 50px; border-radius: 15px; border-style: solid ; text-align: center;">
+			<h1>The Current Count is</h1>
+			<h2>{{count}}</h2>
+			<div style="display: flex; justify-content: space-around; align-items: center;">
+				<button style="padding: 5px; font-size: 25px; padding-right: 10px; padding-left:10px; border-radius: 15px" v-on:click= "SubtractFromCount">-</button>
+				<button style="padding: 5px; font-size: 25px; padding-right: 10px; padding-left:10px; border-radius: 15px" v-on:click = "addToCount">+</button>
+			</div>
+		</div>
+	</div>
+
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script type="text/javascript">
+	const app = Vue.createApp({
+		data(){
+			return{
+				count:0,
+				
+			}
+		},
+		methods:{
+			addToCount(){
+				this.count = this.count +1
+			},
+			SubtractFromCount(){
+				this.count = this.count -1
+			}
+		}
+
+	})
+	app.mount('#app')
+	
+</script>
+</body>
+</html>
